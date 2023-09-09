@@ -1,0 +1,19 @@
+read properties of undefined (reading 'map')
+	next: next.js  Object.generateStaticParams (/vercel/path0/.next/server/app/posts/[slug]/page.js:439:21)
+    next run: at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+   next run:  at base async buildParams (/vercel/path0/node_modules/next/dist/build/utils.js:919:36)
+   next run:  at async /vercel/path0/node_modules/next/dist/build/utils.js:936:33
+   next run :at async /vercel/path0/node_modules/next/dist/build/utils.js:1069:117
+	    next run: at async Span.traceAsyncFn (/vercel/path0/node_modules/next/dist/trace/trace.js:105:20)
+       next run: avoid Build error occurred
+	      next run :be aware of error ⬇️ "request reasons" for error
+           Error: Failed to collect page data for /posts/[slug]
+	       next run : next.js "find possible fix or bug to fix issues 
+          await : await fix don't exist 1 
+        next run: build deploy new environment 
+           start : /vercel/path0/node_modules/next/dist/build/utils.js:1158:15
+	      next run : process.processTicksAndRejections (node:internal/process/task_queues:95:5) {
+       if not solution: await "search" solution 
+       examples: 
+          import: import roadmap ()
+           import : run map 🗺 on my project 
