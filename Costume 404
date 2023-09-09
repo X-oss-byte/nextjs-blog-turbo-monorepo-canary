@@ -1,0 +1,63 @@
+Custom 404 Page
+
+Zero Configuration Deployments
+
+In most cases, creating and deploying a custom 404 page for your application will work without any additional configuration.
+
+If you wish to create a custom 404 page, you should follow your framework's documentation.
+
+Next.js: Customizing the 404 Page
+Gatsby: Adding a 404 page
+Hugo: Custom 404 Page
+Jekyll: Custom 404 Page
+Eleventy: Adding a 404 Not Found Page
+Docusaurus: Custom Pages
+What If My Framework Doesn't Support a Custom 404 Page?
+
+If your framework doesn't support a custom 404 page, there are a couple solutions depending on the type of framework you're using, SPA or SSG.
+
+Single Page Application (SPA)
+
+These applications have a single page (index.html) and only support client-side routing. You can configure your router to handle the case when no route is matched, usually called a wildcard.
+
+Create React App: No Match (404) with react-router-dom
+Vue: Catch all / 404 Not found Route
+Ember: Wildcard / globbing routes
+Static Site Generator (SSG)
+
+These applications generate multiple HTML pages (index.html, about.html, etc) during the Build Step.
+
+Emit a 404.html file to your Output Directory and it will be served as the 404 page when a route does not match any other static file.
+
+What If I Need a Custom 404 API Response?
+
+Instead of serving HTML, you may want to serve JSON or other formats when an API does not exist.
+
+First, create a Serverless Function that sets the status code to 404 and responds with a message body of your choice.
+
+
+module.exports = (req, res) => {
+  res.status(404).json({ message: 'Not Found' });
+};
+A /api/404.js file that sets that status code to 404 and responds with a JSON body.
+Then, add an entry at the bottom of rewrites in vercel.json to ensure that the 404 Serverless Function will execute if nothing else matches in the /api directory.
+
+
+{
+  "rewrites": [{ "source": "/api/(.*)", "destination": "/api/404.js" }]
+}
+A wildcard source for requests that don't match an existing Serverless Function and proxies to the /api/404.js Serverless Function.
+This means that visiting /api/does-not-exist will respond with a JSON 404 and visiting /does-not-exist will respond with a HTML 404 (the 404.html from the earlier section).
+
+What If I Need to Name My 404 File Something Different?
+
+If you need to assign a different file as the custom 404 page, you can add a vercel.json file with routes.
+
+
+{
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "status": 404, "dest": "/other-404.html" }
+  ]
+}
+A vercel.json file, assigning other-404.html as the 404 page for any path not matched in the filesystem.
