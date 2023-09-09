@@ -1,0 +1,25 @@
+import : mirror canary base on @vercel
+
+ export file : save new files "for me only"
+
+next : builder run Nextjs build 
+
+ next job : builder run build imported pages as output 
+
+    next.js : always prepare solutions to any issues that failed production or deployment 
+
+       next : read and rewrite any failure 
+
+     next.js : rewrites right code 👩‍💻 soucery ai can help
+
+      run each job alone and correct errors 
+     
+        finish : next.js finish  build 
+      
+    directory: follow vercel rules but don't limit building web
+    
+   <https://github.com/sammyfilly/nextjs-blog-turbo-monorepo-canary/tree/main>
+
+     using vercel: run delpoy 
+         job : deploy and build properly 
+   
